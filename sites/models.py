@@ -36,7 +36,7 @@ CURRENCY_CHOICES = [
 
 class Site(models.Model):
     site_name = models.CharField(max_length=100)
-    site_slug = models.SlugField()
+    site_slug = models.SlugField(unique=True)
     site_subdomain = models.CharField(max_length=24)
     site_design = models.JSONField(editable=True)
 

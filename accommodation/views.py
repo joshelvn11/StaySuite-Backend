@@ -9,10 +9,10 @@ from sites.models import Site
 class AccommodationList(APIView):
     def get(self, request):
         # Get the site_id from the query params
-        site_id = request.query_params.get('site_id')
-        if site_id:
+        slug = request.query_params.get('slug')
+        if slug:
             # Filter accommodation listing by site
-            site = Site.objects.get(pk=site_id)
+            site = Site.objects.get(site_slug=slug)
             accommodation_listings = AccommodationListing.objects.filter(site=site)
         else:
             # Return an error if no site_id is provided
