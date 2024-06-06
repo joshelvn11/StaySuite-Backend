@@ -2,17 +2,17 @@ from django.db import models
 from sites.models import Site
 
 ACCOMMODATION_TYPES = [
-        (0, "Home"),
-        (1, "Room"),
-        (2, "Camping Site")
-    ]
+    (0, "Home"),
+    (1, "Room"),
+    (2, "Camping Site")
+]
 
 ACCOMMODATION_PRICE_TYPES = [
-        (0, "Per Night"),
-        (1, "Per Person Per Night"),
-        (2, "Per Week"),
-        (3, "Per Month"),
-    ]
+    (0, 'Per Night'),
+    (1, 'Per Person Per Night'),
+    (2, 'Per Week'),
+    (3, 'Per Month'),
+]
 
 
 class AccommodationListing(models.Model):
