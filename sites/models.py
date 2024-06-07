@@ -8,29 +8,7 @@ CURRENCY_CHOICES = [
     ('JPY', 'Japanese Yen'),
     ('AUD', 'Australian Dollar'),
     ('CAD', 'Canadian Dollar'),
-    ('CHF', 'Swiss Franc'),
-    ('CNY', 'Chinese Yuan'),
-    ('INR', 'Indian Rupee'),
-    ('RUB', 'Russian Ruble'),
-    ('BRL', 'Brazilian Real'),
     ('ZAR', 'South African Rand'),
-    ('MXN', 'Mexican Peso'),
-    ('SGD', 'Singapore Dollar'),
-    ('HKD', 'Hong Kong Dollar'),
-    ('NZD', 'New Zealand Dollar'),
-    ('SEK', 'Swedish Krona'),
-    ('NOK', 'Norwegian Krone'),
-    ('DKK', 'Danish Krone'),
-    ('PLN', 'Polish Zloty'),
-    ('THB', 'Thai Baht'),
-    ('MYR', 'Malaysian Ringgit'),
-    ('IDR', 'Indonesian Rupiah'),
-    ('PHP', 'Philippine Peso'),
-    ('VND', 'Vietnamese Dong'),
-    ('KRW', 'South Korean Won'),
-    ('AED', 'United Arab Emirates Dirham'),
-    ('SAR', 'Saudi Riyal'),
-    ('TRY', 'Turkish Lira'),
 ]
 
 
@@ -39,6 +17,7 @@ class Site(models.Model):
     site_slug = models.SlugField(unique=True)
     site_subdomain = models.CharField(max_length=24)
     site_design = models.JSONField(editable=True)
+    site_currency = models.CharField(max_length=3, choices=CURRENCY_CHOICES, default="USD")
 
     class Meta:
         verbose_name = "Site"
