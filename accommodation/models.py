@@ -24,6 +24,7 @@ class AccommodationListing(models.Model):
     accomodation_price = models.IntegerField()
     accommodation_description = models.TextField()
     accommodation_excerpt = models.TextField()
+    accommodation_gallery = models.JSONField(null=True)
 
     class Meta:
         verbose_name = "Accommodation Listing"

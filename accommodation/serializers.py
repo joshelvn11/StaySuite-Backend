@@ -9,5 +9,5 @@ class AccommodationListingSerializer(serializers.ModelSerializer):
             'id', 'site', 'accommodation_name', 'accommodation_slug',
             'accommodation_type', 'accommodation_price_type',
             'accomodation_price', 'accommodation_description',
-            'accommodation_excerpt'
+            'accommodation_excerpt', 'accommodation_gallery',
         ]
